@@ -4,6 +4,7 @@
 This project demonstrates the deployment of a secure, enterprise-grade banking infrastructure using **EVE-NG**. The goal is to simulate a production-ready environment for financial services, focusing on network segmentation, database security, and Linux administration.
 
 ## 🏗️ Architecture
+![Banking Lab Architecture](docs/architecture-diag.drawio.png)
 The lab is designed with three distinct security zones:
 1. **User Zone:** For client-side simulations.
 2. **Transit Zone:** Managed by a **pfSense Firewall** to control traffic flow.
