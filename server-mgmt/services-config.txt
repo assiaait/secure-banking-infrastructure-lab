@@ -1,1 +1,15 @@
+RHEL 8 Server - Services Configuration Report
 
+Hostname: localhost
+
+Network Interface: ens3 (Static IP: 10.0.3.10)
+
+Default Gateway: 10.0.3.1 (pfSense OPT1 Interface)
+
+Firewalld: Disabled (Managed by external pfSense Firewall)
+
+SSH Service: Enabled on Port 22 (Used for secure management and SCP transfers)
+
+Internet Status: Restricted (100% packet loss to 8.8.8.8) to maintain banking-grade isolation
+
+Security Script: Applied rhel-hardening.sh for filesystem and user protection
