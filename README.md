@@ -1,4 +1,5 @@
 🏦 Secure Banking Infrastructure Lab
+
 📝 Project Overview
 This project demonstrates the deployment of a secure, enterprise-grade banking infrastructure using EVE-NG. The goal is to simulate a production-ready environment for financial services, focusing on network segmentation, advanced database security, and modern Linux administration.
 
