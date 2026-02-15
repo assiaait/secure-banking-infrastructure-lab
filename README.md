@@ -1,44 +1,60 @@
-# Secure Banking Infrastructure Lab 🛡️🏦
+🏦 Secure Banking Infrastructure Lab
+📝 Project Overview
+This project demonstrates the deployment of a secure, enterprise-grade banking infrastructure using EVE-NG. The goal is to simulate a production-ready environment for financial services, focusing on network segmentation, advanced database security, and modern Linux administration.
 
-## Project Overview
-This project demonstrates the deployment of a secure, enterprise-grade banking infrastructure using **EVE-NG**. The goal is to simulate a production-ready environment for financial services, focusing on network segmentation, database security, and Linux administration.
-
-## 🏗️ Architecture
+🏗️ Architecture
 ![Banking Lab Architecture](docs/architecture-diag.drawio.png)
 > 💡 **Technical Note:** Detailed networking and IP addressing plan can be found in [docs/networking-plan.md](./docs/networking-plan.md).
 
 The lab is designed with three distinct security zones:
-1. **User Zone:** For client-side simulations.
-2. **Transit Zone:** Managed by a **pfSense Firewall** to control traffic flow.
-3. **Secure DB Zone:** Hosting a **Red Hat Enterprise Linux (RHEL 8.4)** server with **Oracle **.
 
-## 🛠️ Technologies Used
-* **Hypervisor:** EVE-NG
-* **Operating System:** Red Hat Enterprise Linux (RHEL) 8
-* **Firewall:** pfSense
-* **Database:** Oracle Database XE 21c
-* **Security:** Firewalld, Network Segmentation, SSH Hardening
+User Zone: Internal banking users for client-side simulations.
 
-## 🚀 Key Implementation Steps
+Transit Zone: Managed by a pfSense Firewall to control and audit all traffic flow.
 
-### 1. RHEL 8 Server Setup
-* Deployed RHEL 8 with a focus on enterprise stability.
-* Configured static networking using `nmcli` for reliable database connectivity.
-* Applied basic system hardening and user management (`oracleadmin`).
+Secure DB Zone: Hosting a Red Hat Enterprise Linux 9 server, hardened for database workloads.
 
-### 2. Database Layer (Oracle SQL)
-* Installed Oracle XE 21c on the RHEL backend.
-* Configured Oracle Listener on port **1521** with restricted access.
-* Designed SQL schemas to simulate banking transactions.
+💡 Technical Note: Detailed networking and IP addressing plan can be found in docs/networking-plan.md.
 
-### 3. Network Security (pfSense)
-* Implemented strict firewall rules to ensure only authorized traffic reaches the Database zone.
-* Simulated real-world banking "Flow Automation" patterns.
+🛠️ Technologies Used
+Hypervisor: EVE-NG.
 
-## 📊 Lab Results
-* **Connectivity:** Verified secure communication between zones using controlled routing.
-* **Security:** Successful blocking of unauthorized access attempts to the DB port.
-* **Performance:** Optimized RHEL kernel settings for database workloads.
+Operating System: Red Hat Enterprise Linux (RHEL) 9.
+
+Firewall: pfSense.
+
+Database: Oracle Database 19c Enterprise Edition (The gold standard for banking).
+
+Security: Firewalld, Network Segmentation, SSH Hardening.
+
+🚀 Key Implementation Steps
+1. RHEL 9 Server Setup
+Deployed RHEL 9 with an emphasis on the latest enterprise features.
+
+Configured static networking (IP: 192.168.81.213) for reliable database connectivity.
+
+Integrated Oracle Preinstall 19c to automate kernel tuning and user management.
+
+2. Database Layer (Oracle 19c EE)
+Successfully installed Oracle Database 19c Enterprise Edition using the RPM method.
+
+Completed full database configuration (ORCLCDB) with 100% success.
+
+Secured administrative accounts (SYS, SYSTEM) with hardened credentials.
+
+Verified Oracle Listener functionality on port 1521.
+
+3. Network Security (pfSense & Firewalld)
+Implemented a dual-layer firewall strategy: pfSense for perimeter security and Firewalld for host-based protection.
+
+Defined strict rules to allow only authorized banking users to access the DB Zone.
+
+📊 Lab Results
+Deployment: Database configuration reached 100% completion successfully.
+
+Connectivity: Verified production-ready status of the Oracle Instance.
+
+Compliance: Infrastructure aligns with core banking security principles.
 
 ---
 *Created by Assia - Cybersecurity Master's Student at UPB.*
