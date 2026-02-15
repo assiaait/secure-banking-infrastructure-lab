@@ -3,6 +3,7 @@
 This project demonstrates the deployment of a secure, enterprise-grade banking infrastructure using EVE-NG. The goal is to simulate a production-ready environment for financial services, focusing on network segmentation, advanced database security, and modern Linux administration.
 
 🏗️ Architecture
+
 ![Banking Lab Architecture](docs/architecture-diag.drawio.png)
 > 💡 **Technical Note:** Detailed networking and IP addressing plan can be found in [docs/networking-plan.md](./docs/networking-plan.md).
 
