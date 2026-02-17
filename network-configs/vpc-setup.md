@@ -21,6 +21,7 @@ To ensure the client was correctly provisioned within the network topology, we v
 
 > **Evidence Log:**
 > ![VPCS Final Configuration](../docs/vpcs-final-config.png)
+
 > *The terminal output confirms the IP is active and unique within the LAN.*
 
 ---
