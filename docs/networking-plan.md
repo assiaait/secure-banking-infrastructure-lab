@@ -1,15 +1,17 @@
-# Network Addressing & Connectivity Plan 🌐
+# Network Addressing & Connectivity Plan (Updated) 🌐
 
-This document details the IP addressing scheme and network segmentation logic used in the **Secure Banking Lab**.
+This document outlines the infrastructure layout and connectivity logic for the Secure Banking Lab as implemented in EVE-NG.
 
-## 📍 Network Segmentation (Zones)
-The architecture is divided into three logical zones to ensure maximum security for the banking data.
+# 📍 Network Topology Overview
+The network utilizes a pfSense Firewall as the gateway to the external network (Net), connected via a central Switch to isolate internal assets.
 
-| Zone | Network Subnet | Description | Security Level |
-| :--- | :--- | :--- | :--- |
-| **User Zone** | 10.0.1.0/24 | Client simulation (Internal Banking User) | Medium |
-| **Transit Zone** | 10.0.2.0/24 | Managed by pfSense (Firewall) | High |
-| **Secure DB Zone** | 10.0.3.0/24 | Isolated RHEL 8.4 Server | Critical |
+# 📟 Device IP & Interface Mapping
+
+Device,Interface,Connection Point,IP Address (Proposed),Role
+pfSense Firewall,e0,External (Net),DHCP,Perimeter Security
+pfSense Firewall,e1,Switch Gi0/0,10.0.1.1/24,Default Gateway
+Internal-Banking-User,eth0,Switch Gi0/2,10.0.1.20/24,Client Terminal
+RHEL_9_Server,e0,Switch Gi0/1,10.0.1.10/24,Oracle DB Host
 
 ## 📟 Device IP Assignments
 | Device | Interface | IP Address | Gateway | Role |
