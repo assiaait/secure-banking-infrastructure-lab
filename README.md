@@ -1,62 +1,54 @@
-🏦 Secure Banking Infrastructure Lab
+# 🏦 Secure Banking Infrastructure Lab
 
-📝 Project Overview
-This project demonstrates the deployment of a secure, enterprise-grade banking infrastructure using EVE-NG. The goal is to simulate a production-ready environment for financial services, focusing on network segmentation, advanced database security, and modern Linux administration.
-
-🏗️ Architecture
-
-![Banking Lab Architecture](docs/architecture-diag.drawio.png)
-> 💡 **Technical Note:** Detailed networking and IP addressing plan can be found in [docs/networking-plan.md](./docs/networking-plan.md).
-
-The lab is designed with three distinct security zones:
-
-User Zone: Internal banking users for client-side simulations.
-
-Transit Zone: Managed by a pfSense Firewall to control and audit all traffic flow.
-
-Secure DB Zone: Hosting a Red Hat Enterprise Linux 9 server, hardened for database workloads.
-
-💡 Technical Note: Detailed networking and IP addressing plan can be found in docs/networking-plan.md.
-
-🛠️ Technologies Used
-Hypervisor: EVE-NG.
-
-Operating System: Red Hat Enterprise Linux (RHEL) 9.
-
-Firewall: pfSense.
-
-Database: Oracle Database 19c Enterprise Edition (The gold standard for banking).
-
-Security: Firewalld, Network Segmentation, SSH Hardening.
-
-🚀 Key Implementation Steps
-1. RHEL 9 Server Setup
-Deployed RHEL 9 with an emphasis on the latest enterprise features.
-
-Configured static networking (IP: 192.168.81.213) for reliable database connectivity.
-
-Integrated Oracle Preinstall 19c to automate kernel tuning and user management.
-
-2. Database Layer (Oracle 19c EE)
-Successfully installed Oracle Database 19c Enterprise Edition using the RPM method.
-
-Completed full database configuration (ORCLCDB) with 100% success.
-
-Secured administrative accounts (SYS, SYSTEM) with hardened credentials.
-
-Verified Oracle Listener functionality on port 1521.
-
-3. Network Security (pfSense & Firewalld)
-Implemented a dual-layer firewall strategy: pfSense for perimeter security and Firewalld for host-based protection.
-
-Defined strict rules to allow only authorized banking users to access the DB Zone.
-
-📊 Lab Results
-Deployment: Database configuration reached 100% completion successfully.
-
-Connectivity: Verified production-ready status of the Oracle Instance.
-
-Compliance: Infrastructure aligns with core banking security principles.
+## 📝 Project Overview
+This project demonstrates the deployment of a secure, enterprise-grade banking infrastructure using **EVE-NG**. The goal is to simulate a production-ready environment for financial services, focusing on network segmentation, advanced database security (Oracle 19c), and SWIFT CSP compliance.
 
 ---
-*Created by Assia - Cybersecurity Master's Student at UPB.*
+
+## 🏗️ Architecture
+The lab follows a **Defense-in-Depth** strategy with three distinct security zones:
+
+* **User Zone**: Internal banking terminals (VPCS) used for auditing and database interaction.
+* **Transit Zone**: Managed by a **pfSense Firewall** to control and audit all traffic flow via Port 1521.
+* **Secure DB Zone**: A hardened **RHEL 9 Server** hosting the Oracle 19c Database.
+
+> **Topology View:**
+> ![Lab Topology](docs/architecture-diag.drawio.png)
+> *Figure 1: Network architecture featuring a RHEL 9 Server protecting the database layer.*
+
+---
+
+## 🛠️ Technologies Used
+* **Hypervisor**: EVE-NG.
+* **Operating System**: Red Hat Enterprise Linux (RHEL) 9.
+* **Firewall**: pfSense (Community Edition).
+* **Database**: Oracle Database 19c Enterprise Edition.
+* **Compliance Framework**: SWIFT Customer Security Programme (CSP).
+
+---
+
+## 🚀 Key Implementation Steps
+
+### 1. Network & Firewall Security
+* Implemented strict **LAN rules** in pfSense to allow only **SQL Port 1521** traffic to the DB server.
+* Configured static IP mapping for all nodes (`192.168.1.0/24`) to ensure traceability.
+* **Evidence**: [View Firewall Configuration](🛡️%20security-compliance/swift-csp-check.md).
+
+### 2. Database Recovery & Hardening
+* Resolved critical **Oracle Control File** issues during the forensic recovery phase.
+* Applied automated hardening scripts to the RHEL 9 environment.
+* **Evidence**: [Database Troubleshooting Log](database/troubleshooting-log.md).
+
+### 3. Security Auditing
+* Developed SQL scripts to monitor access to sensitive records such as the **Asia Corporate Account**.
+* **Scripts**: [security-audit.sql](database/security-audit.sql) & [schema-setup.sql](database/schema-setup.sql).
+
+---
+
+## 📊 Lab Results
+* **Deployment**: Database configuration (ORCLCDB) reached 100% completion successfully.
+* **Security**: Infrastructure verified against **SWIFT CSP Control 2.1** for environment isolation.
+* **Connectivity**: Verified secure communication from `192.168.1.20` to `192.168.1.10` via Port 1521.
+
+---
+**Created by Assia** - Cybersecurity Master's Student at UPB.
