@@ -11,8 +11,8 @@ The infrastructure is segmented using a dedicated **pfSense Firewall** to isolat
 * **Target Asset**: RHEL 9 Database Server (`192.168.1.10`).
 
 > **Evidence of Security Policy:**
-> ![pfSense Rule Verification](../docs/image_2f71c3.png)
 > *The rule "Allow Internal User to Access Oracle DB" is active and enforced.*
+> ![pfSense Rule Verification](../docs/image_2f71c3.png)
 
 ---
 
@@ -33,6 +33,5 @@ The **RHEL 9 Server** hosting the database has been hardened to restrict unneces
 ```bash
 # Checking active network interfaces and service listening status
 ip a && netstat -tuln
-```bash
 # Checking active network interfaces and service listening status
 ip a && netstat -tuln
