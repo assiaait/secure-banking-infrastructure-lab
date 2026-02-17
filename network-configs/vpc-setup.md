@@ -30,3 +30,4 @@ Firewall Interaction: During testing, firewall rules were monitored via pfSense 
 Once connectivity was established, the VPC was used to execute the final security audit on the banking records.
 
 Success: The user successfully retrieved sensitive records, including the Asia Corporate Account details.
+
