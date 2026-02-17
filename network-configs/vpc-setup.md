@@ -1,7 +1,7 @@
 ## 🖥️ VPC Setup & Client Connectivity
 This document details the configuration of the internal banking terminals used for auditing and database interaction.
 
-1. Client Configuration (VPCS)
+** 1. Client Configuration (VPCS) **
 The Internal-Banking-User node was configured to reside within the 192.168.1.0/24 subnet, allowing it to communicate with the application layer through the central switch.
 
 Device Name: Internal-Banking-User
@@ -12,14 +12,14 @@ Subnet Mask: 255.255.255.0
 
 Default Gateway: 192.168.1.1 (pfSense LAN Interface)
 
-2. IP Assignment Verification
+** 2. IP Assignment Verification **
 To ensure the client was correctly provisioned within the network topology, we verified the IP assignment directly on the terminal.
 
-[../docs/vpcs-final-config.png]
+![VPCS Final Configuration](../docs/vpcs-final-config.png)
 
 Evidence:
 
-3. Network Path Validation
+** 3. Network Path Validation **
 The connection flow follows the path: VPCS ➡️ Switch (Gi0/2) ➡️ RHEL 9 Server (Gi0/1).
 
 Connectivity Test: A ping was performed to the gateway (192.168.1.1) and the DB server (192.168.1.10) to confirm routing.
