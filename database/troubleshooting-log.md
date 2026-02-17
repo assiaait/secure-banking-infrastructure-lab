@@ -20,7 +20,7 @@ This log documents the manual recovery process of the Oracle 19c instance and th
 * **Action**: Reconfigured instance parameters to bypass container conflicts and forced a clean startup.
 * **Evidence**:
   ![Resolution](../docs/image_20f182.png)
-
+ ![Resolution](../docs/image_20f183.png)
 ## 4. Final Victory: Data Extraction
 * **Success**: Successfully mounted and opened the database under `ORCLCDB`.
 * **Output**: Extracted real-time banking records for audit.
