@@ -6,7 +6,7 @@ This log documents the manual recovery process of the Oracle 19c instance and th
 * **Issue**: Missing Control Files prevented the database from mounting.
 * **Action**: Performed a manual system-wide search using `find`.
 * **Result**: Located `Seed_Database.ctl` in the templates directory.
-* **Evidence**: ![Discovery Scan](./docs/image_15fc9e.png)
+* **Evidence**: ![Discovery Scan](../docs/image_15fc9e.png)
 
 ## 2. Configuration Phase: Fixing Naming Conflicts
 * **Issue**: The system expected SID `ORCL`, but the Control File was hardcoded for `SEEDDATA`.
