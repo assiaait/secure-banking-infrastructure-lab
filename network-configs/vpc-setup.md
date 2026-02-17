@@ -4,7 +4,7 @@ This document details the configuration of the internal banking terminals used f
 
 ---
 
-### 📍 1. Client Configuration (VPCS)
+## 📍 1. Client Configuration (VPCS)
 The **Internal-Banking-User** node was configured to reside within the **192.168.1.0/24** subnet, allowing it to communicate with the application layer through the central switch.
 
 | Parameter | Configuration Value |
@@ -16,7 +16,7 @@ The **Internal-Banking-User** node was configured to reside within the **192.168
 
 ---
 
-### 📟 2. IP Assignment Verification
+## 📟 2. IP Assignment Verification
 To ensure the client was correctly provisioned within the network topology, we verified the IP assignment directly on the terminal.
 
 > **Evidence Log:**
